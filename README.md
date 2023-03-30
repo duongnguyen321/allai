@@ -86,4 +86,4 @@ To start the project, run the following command:
 
 Then open your browser and navigate to `http://localhost:{port}`, where `{port}` is the port number you specified in the .env file. You can now use AllAI to generate intelligent responses!
 ### Thank you for using AllAI!
-I am Duong from [duongnguyen.vercel.app!](https://duongnguyen.vercel.app/)
+I am Duong from [duong.vercel.app!](https://duong.vercel.app/)
