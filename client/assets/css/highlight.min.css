@@ -1,0 +1,37 @@
+/*!
+  Theme: Dracula
+  Author: Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula)
+  License: ~ MIT (or more permissive) [via base16-schemes-source]
+  Maintainer: @highlightjs/core-team
+  Version: 2021.09.0
+*/pre code.hljs{display:block;overflow-x:auto;padding:1em}
+code.hljs{padding:3px 5px}
+.hljs{color:#baa4da;background:#191a2e}
+.hljs ::selection,
+.hljs::selection{background-color:#baa4da25;}
+.hljs-comment{color:#7f848e}
+.hljs-tag{color:#20E3B2}
+.hljs-property{color:#9a86fd}
+.hljs-operator,.hljs-punctuation,.hljs-subst{color:#ffd700}
+.hljs-operator{opacity:.7}
+.hljs-bullet,.hljs-deletion,.hljs-name,.hljs-selector-tag,
+.hljs-template-variable {color:#ea51b2}
+.hljs-variable{color: #bd93f9;}
+.hljs-attr,.hljs-link,.hljs-literal,.hljs-number,.hljs-symbol,
+.hljs-variable.constant_{color:#ff6bcb}
+.hljs-class .hljs-title,.hljs-title,
+.hljs-title.class_{color:#eac394}
+.hljs-strong{font-weight:700;color:#eac394}
+.hljs-addition,.hljs-code,.hljs-string,
+.hljs-title.class_.inherited__{color:#eac394}
+.hljs-built_in{color: #20e3b2;}
+.hljs-doctag,.hljs-keyword.hljs-atrule,
+.hljs-quote,.hljs-regexp{color:#bd93f9}
+.hljs-attribute,.hljs-function .hljs-title,.hljs-section,
+.hljs-title.function_,.ruby .hljs-property{color:#20E3B2}
+.diff .hljs-meta,.hljs-keyword,
+.hljs-template-tag,.hljs-type{color:#ff6bcb}
+.hljs-emphasis{color:#ff6bcb;font-style:italic}
+.hljs-meta,.hljs-meta .hljs-keyword{color:#bd93f9}
+.hljs-meta .hljs-string{color:#eac394}
+.hljs-meta .hljs-keyword,.hljs-meta-keyword{font-weight:700}
