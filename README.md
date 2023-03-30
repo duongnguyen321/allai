@@ -4,7 +4,8 @@
 
 Welcome to AllAI project! This project is built using Node.js and OpenAI API to generate intelligent responses to various types of questions. To get started, follow these simple steps:
 
-    Đây là một dự án được viết bằng Node.js để sử dụng OpenAI API để tạo ra các nội dung đa dạng. Để sử dụng dự án này, bạn cần thực hiện các bước sau:
+    Đây là một dự án được viết bằng Node.js để sử dụng OpenAI API để tạo ra các nội dung đa dạng.
+    Để sử dụng dự án này, bạn cần thực hiện các bước sau:
 
 ## Hướng dẫn Cài Đặt dự án AllAi
 
