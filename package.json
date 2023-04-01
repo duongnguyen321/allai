@@ -2,10 +2,13 @@
   "name": "allai",
   "version": "1.0.0",
   "description": "All AI in ONE",
-  "main": "index.js",
+  "main": "server.min.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server.min.js"
   },
   "keywords": [
     "chatgpt"
@@ -14,6 +17,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "json-server": "^0.17.3",
     "openai": "^3.2.1"
   }
 }

@@ -27,9 +27,10 @@ Hoặc đối với linux, mac...
 
 để tạo ra một file .env mới.
 
-Thêm OpenAI API key của bạn vào biến
+Thêm API key của bạn vào biến
 
     OPENAI_API_KEY=
+    ...
 
 trong file .env mới.
 
@@ -70,9 +71,10 @@ or on Windows:
 
     copy .env.example .env
 
-Edit the .env file and add your OpenAI API key to the following line:
+Edit the .env file and add your API key to the following line:
 
     OPENAI_API_KEY=your_api_key_here
+    ...
 
 Also, specify the desired port number in the following line or leave it as default:
 
