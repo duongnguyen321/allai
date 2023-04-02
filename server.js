@@ -13,15 +13,15 @@ const server = async (method, body) => {
   const url = `${process.env.API_URL}/chat-history`;
   if (method === "get") {
     try {
-      const response = await axios.get(url + "?_sort=id&_order=desc&_limit=7");
+      const response = await axios.get(url + "?_sort=id&_order=desc&_limit=10");
       const chatHistory = response.data;
-      message = chatHistory
+      let message = await chatHistory
         .map((chatItem) => [
           { role: "user", content: chatItem.user },
           { role: "assistant", content: chatItem.bot },
         ])
         .flat();
-      return message;
+      return message.reverse();
     } catch (error) {
       console.error("Unable to save chat history: ", error);
       return [];
