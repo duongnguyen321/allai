@@ -79,6 +79,10 @@ a {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-overflow: 0;
+}
+#submit-button span {
+  display: none !important;
 }
 #response-list {
   border: none;
