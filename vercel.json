@@ -4,10 +4,7 @@
   "builds": [
     {
       "src": "server.min.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": "db.json"
-      }
+      "use": "@vercel/node"
     },
     {
       "src": "/client/(.*)",
@@ -20,11 +17,11 @@
       "dest": "server.min.js"
     },
     {
-      "src": "/get-prompt-result",
+      "src": "/api/get-prompt-result",
       "methods": ["POST"]
     },
     {
-      "src": "/chat-history",
+      "src": "/api/chat-history",
       "methods": ["GET"]
     }
   ]
