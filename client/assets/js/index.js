@@ -65,8 +65,18 @@ async function handleSubmit(userPrompt, generatedResponse) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt: prompt, model: model }),
     });
-    if (response.type === "invalid_request_error") {
-      showError(responseElement, `HTTP Error: ${await response.text()}`);
+    if (!response.ok) {
+      showError(
+        responseElement,
+        `Some thing went wrong 😢, hope you reload the page and try again!\n
+        HTTP Error: ${await response.text()}
+        `
+      );
+      setTimeout(() => {
+        confirm("Reload the page?") && location.reload();
+      }, 1000);
+      clearInterval(intervalId);
+      localStorage.visitedTime = 0;
       return;
     }
     clearInterval(intervalId);
