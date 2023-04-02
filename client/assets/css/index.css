@@ -28,6 +28,10 @@ select {
   width: 100%;
   text-overflow: ellipsis;
 }
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
 .ai-image {
   width: 500px;
   height: auto;
