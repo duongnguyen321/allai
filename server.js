@@ -13,7 +13,7 @@ const server = async (method, body) => {
   const url = `${process.env.API_URL}/chat-history`;
   if (method === "get") {
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url + "?_sort=id&_order=desc&_limit=7");
       const chatHistory = response.data;
       message = chatHistory
         .map((chatItem) => [
