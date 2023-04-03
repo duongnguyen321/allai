@@ -68,7 +68,9 @@ async function handleSubmit(userPrompt, generatedResponse) {
     if (!response.ok) {
       showError(
         responseElement,
-        `Some thing went wrong 😢, hope you reload the page and try again!\n
+        `Some thing went wrong 😢, hope you reload the page and try again!<br/>
+        If the Error is FUNCTION_INVOCATION_TIMEOUT, don't worry, it's just a timeout error.<br/>
+        Because When using Vercel with a Hobby plan, your serverless API routes can only be processed for 5 seconds. This means that after 5 seconds, the route responds with a 504 GATEWAY TIMEOUT error!<br/>
         HTTP Error: ${await response.text()}
         `
       );
