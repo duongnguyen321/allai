@@ -8,20 +8,24 @@ const openai = new OpenAIApi(
   new OpenAIConfig({ apiKey: process.env.OPENAI_API_KEY })
 );
 
-// Server hander
+// Server hander to get and post data to API server or not
 const server = async (method, body) => {
-  const url = `${process.env.API_URL}/chat-history`;
+  const url = `${process.env.API_URL}/chat-history`; // get chat history data or not
+  const tranning = `${process.env.API_URL}/chat-tranning`; // add tranning data or not
   if (method === "get") {
     try {
-      const response = await axios.get(url + "?_sort=id&_order=desc&_limit=10");
+      const responseTrainning = await axios.get(tranning);
+      const response = await axios.get(url);
       const chatHistory = response.data;
-      let message = await chatHistory
+      const trainning = responseTrainning.data;
+      await chatHistory.push(...trainning);
+      const message = await chatHistory
         .map((chatItem) => [
           { role: "user", content: chatItem.user },
           { role: "assistant", content: chatItem.bot },
         ])
         .flat();
-      return message.reverse();
+      return message;
     } catch (error) {
       console.error("Unable to save chat history: ", error);
       return [];
@@ -43,6 +47,10 @@ app.use(express.json());
 app.use("/", express.static(__dirname + "/client"));
 
 // Routes
+app.get("/api/get-chat-history", async (req, res) => {
+  const message = await server("get");
+  return res.send(message);
+});
 app.post("/api/get-prompt-result", async (req, res) => {
   const { prompt: promptText, model: modelName = "gpt" } = req.body;
   if (!promptText) {
