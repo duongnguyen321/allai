@@ -18,13 +18,11 @@ const server = async (method, body) => {
       const response = await axios.get(url);
       const chatHistory = response.data;
       const trainning = responseTrainning.data;
-      await chatHistory.push(...trainning);
-      const message = await chatHistory
-        .map((chatItem) => [
-          { role: "user", content: chatItem.user },
-          { role: "assistant", content: chatItem.bot },
-        ])
-        .flat();
+      await trainning.push(...chatHistory);
+      const message = await trainning.flatMap((chatItem) => [
+        { role: "user", content: chatItem.user },
+        { role: "assistant", content: chatItem.bot },
+      ]);
       return message;
     } catch (error) {
       console.error("Unable to save chat history: ", error);
