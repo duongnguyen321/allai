@@ -10,16 +10,13 @@ const openai = new OpenAIApi(
 
 // Server hander to get and post data to API server or not
 const server = async (method, body) => {
-  const url = `${process.env.API_URL}/chat-history`; // get chat history data or not
-  const tranning = `${process.env.API_URL}/chat-tranning`; // add tranning data or not
+  const all = `${process.env.API_URL}/all`; // get all data
+  const url = `${process.env.API_URL}/chat-history`; // push some thing to server
   if (method === "get") {
     try {
-      const responseTrainning = await axios.get(tranning);
-      const response = await axios.get(url);
+      const response = await axios.get(all);
       const chatHistory = response.data;
-      const trainning = responseTrainning.data;
-      await trainning.push(...chatHistory);
-      const message = await trainning.flatMap((chatItem) => [
+      const message = await chatHistory.flatMap((chatItem) => [
         { role: "user", content: chatItem.user },
         { role: "assistant", content: chatItem.bot },
       ]);
@@ -38,7 +35,6 @@ const server = async (method, body) => {
     }
   }
 };
-
 // Middleware
 app.use(cors());
 app.use(express.json());
